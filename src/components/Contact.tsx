@@ -5,13 +5,34 @@ import styles from "./Contact.module.css";
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Replace with your form endpoint (e.g. Formspree, Resend, etc.)
-    console.log("Form submitted:", form);
-    setSent(true);
-  };
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setLoading(true);
+  setError("");
+
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      setSent(true);
+    } else {
+      setError("Something went wrong. Please try again.");
+    }
+  } catch (err) {
+    setError("Something went wrong. Please try again.");
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <section id="contact" className={styles.section}>
@@ -74,8 +95,9 @@ export default function Contact() {
                   required
                 />
               </div>
-              <button type="submit" className={styles.submit}>
-                Send message →
+             {error && <p className={styles.error}>{error}</p>}
+              <button type="submit" className={styles.submit} disabled={loading}>
+                {loading ? "Sending..." : "Send message →"}
               </button>
             </form>
           )}

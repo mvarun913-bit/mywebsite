@@ -2,9 +2,9 @@ export default function Hero() {
   return (
     <section id="home" style={{ minHeight: "100vh", display: "flex", alignItems: "center", padding: "120px 32px 80px" }}>
       <div>
-        <p style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "#e8c547", marginBottom: 24 }}>Portfolio · 2025</p>
+        <p style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "#c4571a", marginBottom: 24 }}>Portfolio · 2025</p>
         <h1 style={{ fontFamily: "serif", fontSize: "clamp(64px, 10vw, 120px)", lineHeight: 0.95, letterSpacing: "-0.04em", marginBottom: 28 }}>
-          Your<br /><span style={{ color: "#e8c547" }}>Name</span><br />Here.
+          Varun<br /><span style={{ color: "#c4571a" }}>Munigala</span><br />Here.
         </h1>
         <p style={{ fontSize: 18, color: "#888", fontWeight: 300, maxWidth: 460, lineHeight: 1.6, marginBottom: 40 }}>
           Developer. Traveler. Builder of things that matter.

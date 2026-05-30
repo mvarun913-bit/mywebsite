@@ -1,0 +1,8 @@
+<svg width="32" height="32" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="160" rx="18" fill="#c4571a"/>
+  <polygon points="80,18 118,88 42,88" fill="#f5f0e8" opacity="0.2"/>
+  <polygon points="80,18 118,88 42,88" fill="none" stroke="#f5f0e8" stroke-width="1.8" stroke-linejoin="round"/>
+  <line x1="42" y1="88" x2="118" y2="88" stroke="#f5f0e8" stroke-width="1.8"/>
+  <circle cx="80" cy="18" r="3" fill="#f5f0e8"/>
+  <text x="80" y="76" text-anchor="middle" font-family="Syne, serif" font-weight="800" font-size="22" fill="#f5f0e8" letter-spacing="2">VM</text>
+</svg>

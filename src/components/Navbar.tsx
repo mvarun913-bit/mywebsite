@@ -19,8 +19,8 @@ export default function Navbar() {
       borderBottom: scrolled ? "0.5px solid #1e1e1e" : "0.5px solid transparent",
       transition: "all 0.3s ease"
     }}>
-      <span style={{ fontFamily: "serif", fontWeight: 800, fontSize: 20, color: "#e8c547" }}>YN</span>
-      <div style={{ display: "flex", gap: 32 }}>
+      <img src="/favicon.svg" alt="VM Logo" style={{ width: 40, height: 40, borderRadius: 8 }} />
+       <div style={{ display: "flex", gap: 32 }}>
         {["About","Travel","Contact"].map(l => (
           <a key={l} href={`#${l.toLowerCase()}`} style={{ fontSize: 13, color: "#888", textDecoration: "none" }}>{l}</a>
         ))}

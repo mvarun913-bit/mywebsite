@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap');
 
 :root {
-  --bg: #0a0a0a;
-  --bg-card: #111111;
-  --border: #1e1e1e;
-  --text-primary: #f0ede8;
-  --text-muted: #888888;
-  --text-faint: #444444;
-  --accent: #e8c547;
-  --accent-dark: #c9a830;
+  --bg: #f5f0e8;
+  --bg-card: #ede8df;
+  --border: #e0d9ce;
+  --text-primary: #1a1612;
+  --text-muted: #8a7e72;
+  --text-faint: #c4a882;
+  --accent: #c4571a;
+  --accent-dark: #a84515;
 }
 
 * {
@@ -24,6 +24,7 @@ html {
 body {
   background-color: var(--bg);
   color: var(--text-primary);
+   color-scheme: light;
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
   line-height: 1.6;

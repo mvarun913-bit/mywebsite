@@ -2,41 +2,41 @@ import styles from "./Travel.module.css";
 
 const posts = [
   {
-    id: 1,
-    destination: "Tokyo",
-    country: "Japan",
-    year: "2024",
-    description: "Neon lights, quiet temples, and the best ramen I've ever had. Tokyo is a city of beautiful contradictions.",
-    tags: ["Asia", "Food", "Architecture"],
-    accent: "#4a7fa5",
-  },
-  {
-    id: 2,
-    destination: "Lisbon",
-    country: "Portugal",
-    year: "2023",
-    description: "Tiled facades, fado music drifting from a window, and golden-hour light over the Tagus River.",
-    tags: ["Europe", "Culture", "Photography"],
-    accent: "#a55a4a",
-  },
-  {
-    id: 3,
-    destination: "Bali",
-    country: "Indonesia",
-    year: "2023",
-    description: "Rice terraces, surf breaks, and a slowness that forces you to be present. A trip I keep thinking about.",
-    tags: ["Asia", "Nature", "Surf"],
-    accent: "#4a8a5a",
-  },
-  {
-    id: 4,
-    destination: "Marrakech",
-    country: "Morocco",
-    year: "2022",
-    description: "The medina is a sensory overload in the best way — spices, color, sound, and labyrinthine alleys.",
-    tags: ["Africa", "Culture", "Markets"],
-    accent: "#8a6a4a",
-  },
+  id: 1,
+  destination: "Rome",
+  country: "Italy",
+  year: "2024",
+  description: "Ancient history at every corner — the Colosseum, cobblestone streets, and the best pasta of my life.",
+  tags: ["Europe", "History", "Food"],
+  accent: "#c4571a",
+},
+{
+  id: 2,
+  destination: "Barcelona",
+  country: "Spain",
+  year: "2023",
+  description: "Gaudí's wild architecture, beach vibes, and a nightlife that doesn't start until midnight.",
+  tags: ["Europe", "Architecture", "Culture"],
+  accent: "#a84515",
+},
+{
+  id: 3,
+  destination: "Paris",
+  country: "France",
+  year: "2023",
+  description: "More than just the Eiffel Tower — the cafés, the museums, and the art everywhere you look.",
+  tags: ["Europe", "Art", "Food"],
+  accent: "#8a3a10",
+},
+{
+  id: 4,
+  destination: "Zermatt",
+  country: "Switzerland",
+  year: "2022",
+  description: "Snow-capped peaks, the iconic Matterhorn, and the most peaceful mountain air I've ever breathed.",
+  tags: ["Europe", "Nature", "Mountains"],
+  accent: "#d4692a",
+},
 ];
 
 export default function Travel() {
@@ -55,7 +55,7 @@ export default function Travel() {
           <article key={post.id} className={styles.card}>
             <div
               className={styles.cardBg}
-              style={{ background: `radial-gradient(ellipse at 30% 40%, ${post.accent}33 0%, #111 70%)` }}
+              style={{ background:`radial-gradient(ellipse at 30% 40%, ${post.accent}44 0%, #c4a882 70%)` }}
             />
             <div className={styles.cardContent}>
               <div className={styles.cardTop}>

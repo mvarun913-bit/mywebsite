@@ -23,7 +23,7 @@ export default function Navbar() {
       <img src="/favicon.svg" alt="VM Logo" style={{ width: 40, height: 40, borderRadius: 8 }} />
       <div style={{ display: "flex", gap: 32 }}>
         {["About", "Travel", "Contact"].map(l => (
-          <a key={l} href={l === "Travel" ? "/travel" : `#${l.toLowerCase()}`}
+          <a key={l} href={`#${l.toLowerCase()}`}
             style={{ fontSize: 13, color: "#8a7e72", textDecoration: "none" }}>
             {l}
           </a>

@@ -1,0 +1,133 @@
+.section {
+  padding: 100px 0;
+}
+
+.header {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+  margin-bottom: 48px;
+}
+
+.headerInner { max-width: 560px; }
+
+.label {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.sub {
+  font-size: 15px;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+.grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.card {
+  position: relative;
+  border: 0.5px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.25s, transform 0.25s;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card:hover {
+  border-color: #333;
+  transform: translateY(-4px);
+}
+
+.card:hover .arrow {
+  opacity: 1;
+  transform: translateX(3px) translateY(-3px);
+}
+
+.cardBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 1;
+  padding: 28px;
+  background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.dest {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.meta {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.arrow {
+  font-size: 20px;
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+.desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.cardTags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.cardTag {
+  font-size: 10px;
+  padding: 3px 10px;
+  border: 0.5px solid #2a2a2a;
+  border-radius: 3px;
+  color: #555;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 700px) {
+  .grid { grid-template-columns: 1fr; }
+}

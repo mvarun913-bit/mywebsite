@@ -19,7 +19,7 @@ const skills = [
 ];
 
 const stats = [
-  { value: "12+", label: "Countries visited" },
+  { value: "6+", label: "Countries visited" },
   { value: "5+",  label: "Years with Sitecore" },
   { value: "30+", label: "Projects shipped" },
 ];

@@ -1,8 +1,10 @@
 "use client";
 import { useState } from "react";
 import styles from "./Contact.module.css";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 export default function Contact() {
+  const ref = useScrollAnimation<HTMLElement>();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -35,7 +37,7 @@ export default function Contact() {
 };
 
   return (
-    <section id="contact" className={styles.section}>
+    <section id="contact" ref={ref} className={`${styles.section} fade-up`}>
       <div className={styles.inner}>
         <div className={styles.left}>
           <p className={styles.label}>Contact</p>
@@ -48,7 +50,7 @@ export default function Contact() {
             <a href="https://github.com/mvarun913-bit" target="_blank" rel="noreferrer" className={styles.socialLink}>
               GitHub ↗
             </a>
-            <a href="mailto:you@example.com" className={styles.socialLink}>
+            <a href="mailto:mvarun913@gmail.com" className={styles.socialLink}>
               Email ↗
             </a>
           </div>
@@ -105,7 +107,7 @@ export default function Contact() {
       </div>
 
       <div className={styles.footer}>
-        <p>© 2025 Your Name. Built with Next.js & deployed on Netlify.</p>
+        <p>© 2026 Varun Munigala. Built with Next.js & deployed on Netlify.</p>
       </div>
     </section>
   );

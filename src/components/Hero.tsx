@@ -1,17 +1,42 @@
+import styles from "./Hero.module.css";
+
+const ticker = [
+  "Sitecore XM Cloud", "Next.js", "React", "TypeScript",
+  "Azure", "Headless CMS", "Sitecore JSS", "C# · .NET",
+  "GraphQL", "Sitecore CDP", "Docker", "Figma",
+];
+
 export default function Hero() {
+  const track = [...ticker, ...ticker, ...ticker].join("  ·  ");
+
   return (
-    <section id="home" style={{ minHeight: "100vh", display: "flex", alignItems: "center", padding: "120px 32px 80px" }}>
-      <div>
-        <p style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "#c4571a", marginBottom: 24 }}>Portfolio · 2025</p>
-        <h1 style={{ fontFamily: "serif", fontSize: "clamp(64px, 10vw, 120px)", lineHeight: 0.95, letterSpacing: "-0.04em", marginBottom: 28 }}>
-          Varun<br /><span style={{ color: "#c4571a" }}>Munigala</span><br />Here.
+    <section id="home" className={styles.section}>
+
+      {/* Background watermark */}
+      <div className={styles.bg} aria-hidden="true">
+        <span className={styles.bgLine}>Varun</span>
+        <span className={styles.bgLine}>Munigala</span>
+      </div>
+
+      <div className={styles.inner}>
+        <p className={styles.eyebrow}>Portfolio · 2026</p>
+        <h1 className={styles.title}>
+          <span className={styles.line}>Varun</span>
+          <span className={styles.line}>Munigala</span>
+          <span className={styles.line}>Here.</span>
         </h1>
-        <p style={{ fontSize: 18, color: "#888", fontWeight: 300, maxWidth: 460, lineHeight: 1.6, marginBottom: 40 }}>
-          Developer. Traveler. Builder of things that matter.
+        <p className={styles.sub}>
+          Sitecore Developer. Traveler. Builder of digital experiences that scale.
         </p>
-        <div style={{ display: "flex", gap: 14 }}>
-          <a href="#about" style={{ background: "#e8c547", color: "#0a0a0a", fontSize: 14, fontWeight: 500, padding: "13px 28px", borderRadius: 6, textDecoration: "none" }}>View my work</a>
-          <a href="#contact" style={{ border: "0.5px solid #333", color: "#888", fontSize: 14, padding: "13px 28px", borderRadius: 6, textDecoration: "none" }}>Get in touch</a>
+        <div className={styles.actions}>
+          <a href="#projects" className={styles.btnPrimary}>View my work</a>
+          <a href="#contact" className={styles.btnSecondary}>Get in touch</a>
+        </div>
+      </div>
+
+      <div className={styles.marqueeWrap}>
+        <div className={styles.marquee}>
+          <span className={styles.marqueeInner}>{track}</span>
         </div>
       </div>
     </section>

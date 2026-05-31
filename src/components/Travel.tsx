@@ -1,4 +1,6 @@
+"use client";
 import styles from "./Travel.module.css";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const posts = [
   {
@@ -40,8 +42,10 @@ const posts = [
 ];
 
 export default function Travel() {
+  const ref = useScrollAnimation<HTMLElement>();
+
   return (
-    <section id="travel" className={styles.section}>
+    <section id="travel" ref={ref} className={`${styles.section} fade-up`}>
       <div className={styles.header}>
         <div className={styles.headerInner}>
           <p className={styles.label}>Travel</p>

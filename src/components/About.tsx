@@ -1,25 +1,89 @@
+"use client";
+import { useEffect, useRef, useState } from "react";
 import styles from "./About.module.css";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
-const skills = ["React", "Next.js", "TypeScript", "Node.js", "Tailwind", "Figma", "PostgreSQL", "Git"];
+const skills = [
+  "Sitecore XM/XP",
+  "Sitecore XM Cloud",
+  "Headless CMS",
+  "Next.js",
+  "React",
+  "TypeScript",
+  "C# / .NET",
+  "GraphQL",
+  "Sitecore JSS",
+  "Azure",
+  "Docker",
+  "Git",
+];
 
 const stats = [
   { value: "12+", label: "Countries visited" },
-  { value: "5+",  label: "Years of experience" },
+  { value: "5+",  label: "Years with Sitecore" },
   { value: "30+", label: "Projects shipped" },
 ];
 
-export default function About() {
+function StatCounter({ value, label }: { value: string; label: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const num = parseInt(value);
+  const suffix = value.replace(/[0-9]/g, "");
+  const [display, setDisplay] = useState("0" + suffix);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        observer.unobserve(el);
+
+        const duration = 1400;
+        const startTime = performance.now();
+
+        const tick = (now: number) => {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          setDisplay(Math.round(eased * num) + suffix);
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+
+        requestAnimationFrame(tick);
+      },
+      { threshold: 0.6 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [num, suffix]);
+
   return (
-    <section id="about" className={styles.section}>
+    <div ref={ref} className={styles.statItem}>
+      <span className={styles.statValue}>{display}</span>
+      <span className={styles.statLabel}>{label}</span>
+    </div>
+  );
+}
+
+export default function About() {
+  const ref = useScrollAnimation<HTMLElement>();
+
+  return (
+    <section id="about" ref={ref} className={`${styles.section} fade-up`}>
       <div className={styles.inner}>
         <div className={styles.left}>
           <p className={styles.label}>About</p>
           <h2 className={styles.title}>Who I am &amp; what I do</h2>
           <p className={styles.body}>
-            I&apos;m a developer and traveler based on the internet. I build fast,
-            accessible web experiences and spend the rest of my time exploring
-            new cities, cultures, and cuisines. Currently open to freelance
-            projects and full-time opportunities.
+            I&apos;m a Sitecore developer with 5+ years building content-driven
+            digital experiences for enterprise clients. I specialize in Sitecore
+            XM Cloud and headless architectures — bridging the gap between
+            powerful CMS capabilities and modern front-end stacks like Next.js.
+            When I&apos;m not deep in component development or deployment pipelines,
+            I&apos;m somewhere new in the world, exploring cities and cultures one trip
+            at a time.
           </p>
           <div className={styles.tags}>
             {skills.map((s) => (
@@ -32,10 +96,7 @@ export default function About() {
           <p className={styles.label}>By the numbers</p>
           <div className={styles.stats}>
             {stats.map((s) => (
-              <div key={s.label} className={styles.statItem}>
-                <span className={styles.statValue}>{s.value}</span>
-                <span className={styles.statLabel}>{s.label}</span>
-              </div>
+              <StatCounter key={s.label} value={s.value} label={s.label} />
             ))}
           </div>
         </div>

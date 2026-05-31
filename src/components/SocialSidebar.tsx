@@ -25,8 +25,8 @@ const GitHubIcon = () => (
 );
 
 const socials = [
-  { name: "Instagram", url: "https://instagram.com/YOUR_HANDLE", icon: <InstagramIcon /> },
-  { name: "LinkedIn", url: "https://linkedin.com/in/YOUR_HANDLE", icon: <LinkedInIcon /> },
+  { name: "Instagram", url: "https://instagram.com/varunmunigala", icon: <InstagramIcon /> },
+  { name: "LinkedIn", url: "https://linkedin.com/in/varunmunigala", icon: <LinkedInIcon /> },
   { name: "GitHub", url: "https://github.com/mvarun913-bit", icon: <GitHubIcon /> },
 ];
 

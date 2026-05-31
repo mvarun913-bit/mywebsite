@@ -1,0 +1,164 @@
+.section {
+  padding: 100px 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.header {
+  margin-bottom: 56px;
+  max-width: 560px;
+}
+
+.label {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.sub {
+  font-size: 15px;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 48px 1fr 24px;
+  gap: 24px;
+  align-items: start;
+  padding: 32px 0;
+  border-top: 0.5px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  isolation: isolate;
+}
+
+.item::before {
+  content: '';
+  position: absolute;
+  inset: 0 -32px;
+  background: var(--bg-card);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.item:hover::before {
+  transform: scaleX(1);
+}
+
+.item:last-child {
+  border-bottom: 0.5px solid var(--border);
+}
+
+.item:hover .itemTitle {
+  color: var(--accent);
+}
+
+.item:hover .itemArrow {
+  opacity: 1;
+  transform: translateX(3px) translateY(-3px);
+}
+
+.item:hover .itemIndex {
+  color: var(--accent);
+}
+
+.itemIndex {
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  color: var(--text-faint);
+  padding-top: 4px;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+.itemMain {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.itemTop {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.itemTitle {
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  transition: color 0.2s;
+}
+
+.itemYear {
+  font-size: 12px;
+  color: var(--text-faint);
+  letter-spacing: 0.05em;
+}
+
+.itemDesc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-weight: 300;
+  max-width: 600px;
+}
+
+.itemTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.itemTag {
+  font-size: 11px;
+  padding: 4px 12px;
+  border: 0.5px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.itemArrow {
+  font-size: 18px;
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+  padding-top: 6px;
+  justify-self: end;
+}
+
+@media (max-width: 640px) {
+  .item {
+    grid-template-columns: 36px 1fr;
+  }
+
+  .itemArrow {
+    display: none;
+  }
+}

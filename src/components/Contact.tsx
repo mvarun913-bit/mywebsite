@@ -2,6 +2,7 @@
 import { useState } from "react";
 import styles from "./Contact.module.css";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import VisitorCounter from "./VisitorCounter";
 
 export default function Contact() {
   const ref = useScrollAnimation<HTMLElement>();
@@ -108,6 +109,7 @@ export default function Contact() {
 
       <div className={styles.footer}>
         <p>© 2026 Varun Munigala. Built with Next.js & deployed on Netlify.</p>
+        <VisitorCounter />
       </div>
     </section>
   );

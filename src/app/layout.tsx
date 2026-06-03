@@ -7,6 +7,18 @@ export const metadata: Metadata = {
   title: "Varun Munigala — Sitecore Developer",
   description,
   metadataBase: new URL("https://varunmunigala.com"),
+  keywords: [
+    "Varun Munigala",
+    "Sitecore Developer",
+    "Sitecore XM Cloud",
+    "Headless CMS",
+    "Sitecore JSS",
+    "Next.js",
+    "React Developer",
+    "Enterprise CMS",
+    "Digital Experience Platform",
+  ],
+  authors: [{ name: "Varun Munigala", url: "https://varunmunigala.com" }],
   icons: {
     icon: "/favicon.svg",
   },
